@@ -1,41 +1,55 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    TouchableOpacity
-} from 'react-native';
-import { Container, Footer, FooterTab, Button, Header, Root, Icon } from 'native-base';
-
+  Container,
+  Footer,
+  FooterTab,
+  Button,
+  Header,
+  Root,
+  Icon
+} from "native-base";
 
 export default class Perfil extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}></View>
+        <Image
+          style={styles.avatar}
+          source={{ uri: "https://bootdey.com/img/Content/avatar/avatar6.png" }}
+        />
+        <Text style={styles.main}>lopes@gmail.com</Text>
+        <View style={styles.body}>
+          <View style={styles.bodyContent}>
+            <Text style={styles.name}></Text>
+            <Text style={styles.info}>perfil finfood</Text>
+            <Text style={styles.description}></Text>
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.header}></View>
-                <Image style={styles.avatar} source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar6.png' }} />
-                <Text style={styles.main}>lopes@gmail.com</Text>
-                <View style={styles.body}>
-                    <View style={styles.bodyContent}>
-                        <Text style={styles.name}></Text>
-                        <Text style={styles.info}>perfil finfood</Text>
-                        <Text style={styles.description}></Text>
-
-                        <TouchableOpacity style={styles.buttonContainer}
-                            onPress={() => this.props.navigation.replace('cadEstabelecimento')}>
-                            <Text style={styles.info}>Estabelecimento</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer}>
-                            <Text style={styles.info}>Perfil</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer}>
-                            <Text style={styles.info}>Locais Favoritos</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                {/* <View style={styles.fo2}>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() =>
+                this.props.navigation.replace("cadEstabelecimento")
+              }
+            >
+              <Text style={styles.info}>Estabelecimento</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => this.props.navigation.replace("CadPessoa")}
+            >
+              <Text style={styles.info}>Perfil</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonContainer}>
+              <Text style={styles.info}>Locais Favoritos</Text>
+            </TouchableOpacity>
+            {/* <TouchableOpacity onPress={() => this.props.navigation.goBack()}
+                        style={styles.buttonContainer}>
+                            <Text style={styles.info}>teste goback</Text>
+                        </TouchableOpacity> */}
+          </View>
+        </View>
+        {/* <View style={styles.fo2}>
                     <Footer>
                         <FooterTab>
                             <Button vertical>
@@ -58,75 +72,72 @@ export default class Perfil extends Component {
                             </Button>
                         </FooterTab>
                     </Footer> */}
-                {/* </View> */}
-
-            </View >
-        );
-    }
+        {/* </View> */}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    header: {
-        backgroundColor: "#f28d5e",
-        height: 100,
-    },
-    fo2: {
-        flex: 1,
-        paddingVertical: 390,
-    },
+  header: {
+    backgroundColor: "#f28d5e",
+    height: 100
+  },
+  fo2: {
+    flex: 1,
+    paddingVertical: 390
+  },
 
-    main: {
-        marginLeft: 135,
-        fontSize: 22,
-        // fontWeight: 600
-
-    },
-    avatar: {
-        width: 130,
-        height: 130,
-        borderRadius: 63,
-        borderWidth: 4,
-        borderColor: "white",
-        marginBottom: 10,
-        alignSelf: "center",
-        position: "absolute",
-        marginTop: 50
-    },
-    name: {
-        fontSize: 22,
-        color: "black",
-        fontWeight: "600",
-        alignSelf: "center",
-
-    },
-    body: {
-        marginTop: 10,
-    },
-    bodyContent: {
-        flex: 1,
-        alignItems: "center",
-        padding: 30,
-        marginTop: 20
-    },
-    info: {
-        fontSize: 24,
-        color: "black",
-    },
-    description: {
-        fontSize: 16,
-        color: "#696969",
-        marginTop: 10,
-        textAlign: "center"
-    },
-    buttonContainer: {
-        marginTop: 40,
-        height: 65,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        marginBottom: 5,
-        width: 300,
-        borderRadius: 10,
-        backgroundColor: "#f28d5e",
-    },
+  main: {
+    marginLeft: 135,
+    fontSize: 22
+    // fontWeight: 600
+  },
+  avatar: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "white",
+    marginBottom: 10,
+    alignSelf: "center",
+    position: "absolute",
+    marginTop: 50
+  },
+  name: {
+    fontSize: 22,
+    color: "black",
+    fontWeight: "600",
+    alignSelf: "center"
+  },
+  body: {
+    marginTop: 10
+  },
+  bodyContent: {
+    flex: 1,
+    alignItems: "center",
+    padding: 30,
+    marginTop: 20
+  },
+  info: {
+    fontSize: 24,
+    color: "black"
+  },
+  description: {
+    fontSize: 16,
+    color: "#696969",
+    marginTop: 10,
+    textAlign: "center"
+  },
+  buttonContainer: {
+    marginTop: 40,
+    height: 65,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 5,
+    width: 300,
+    borderRadius: 10,
+    backgroundColor: "#f28d5e"
+  }
 });

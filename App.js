@@ -1,58 +1,56 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
-import FinFood from './src/pages/FinFood';
-import LocaisProximos from './src/pages/locais/LocaisProximos'
-import ScreenDoMapa from './src/pages/ScreenDoMapa';
-import cadEstabelecimento from './src/pages/cadastro/cadEstabelecimento';
-import CadPessoa from './src/pages/cadastro/CadPessoa';
-import Perfil from './src/pages/perfil/perfil'
-
-
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+import FinFood from "./src/pages/FinFood";
+import LocaisProximos from "./src/pages/locais/LocaisProximos";
+import ScreenDoMapa from "./src/pages/ScreenDoMapa";
+import cadEstabelecimento from "./src/pages/cadastro/cadEstabelecimento";
+import CadPessoa from "./src/pages/cadastro/CadPessoa";
+import Perfil from "./src/pages/perfil/perfil";
 
 const AppNavigator = createStackNavigator({
-  'Home': {
+  Home: {
     screen: FinFood,
     navigationOptions: {
-      headerTransparent: 'false'
-    },
+      headerTransparent: "false"
+    }
   },
 
-  'ProxLocal': {
+  ProxLocal: {
     screen: LocaisProximos,
     navigationOptions: {
-      headerTransparent: 'false'
+      headerTransparent: "false"
     }
   },
-  'Map': {
+  Map: {
     screen: ScreenDoMapa,
     navigationOptions: {
-      headerTransparent: 'false'
+      headerTransparent: "false"
     }
   },
 
-  'Perfil': {
+  Perfil: {
     screen: Perfil,
     navigationOptions: {
-      headerTransparent: 'false'
+      headerTransparent: "false"
     }
   },
 
-  'cadEstabelecimento': {
+  cadEstabelecimento: {
     screen: cadEstabelecimento,
     navigationOptions: {
-      headerTransparent: 'false'
+      headerTransparent: "false"
     }
   },
 
-  'CadPessoa': {
+  CadPessoa: {
     screen: CadPessoa,
     navigationOptions: {
-      headerTransparent: 'false'
+      headerTransparent: "false"
     }
   }
-})
+});
 
 const AppContainer = createAppContainer(AppNavigator);
 
